@@ -1,5 +1,7 @@
+import 'reflect-metadata';
 import express, { Express } from 'express';
 import config from './config';
+// import './data-source/connectDB';
 
 const app: Express = express();
 
@@ -10,7 +12,7 @@ app
       ###############################################
               Server listening on port : ${config.port}        
       ###############################################
-  `
+    `
     );
   })
   .on('error', (err) => {

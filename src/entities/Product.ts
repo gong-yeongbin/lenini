@@ -1,5 +1,7 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, ManyToOne } from 'typeorm';
 import { Base } from './Base';
+import { Client } from './Client';
+import { Consumer } from './Consumer';
 
 @Entity({ database: 'lenini', name: 'product' })
 export class Product extends Base {
@@ -14,4 +16,10 @@ export class Product extends Base {
 
   @Column({ name: 'upload_date', type: 'timestamp' })
   upload_date: Date;
+
+  @ManyToOne(() => Client, (client) => client.products)
+  client: Client;
+
+  @ManyToOne(() => Consumer, (consumer) => consumer.products)
+  consumer: Consumer;
 }

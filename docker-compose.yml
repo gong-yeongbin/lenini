@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    restart: always
+    container_name: myrds-mysql
+    ports:
+        - 3306:3306
+    environment:
+        - MYSQL_ROOT_PASSWORD=RHDdudqls816!
+        - TZ=Asia/Seoul
+    command:
+        - --character-set-server=utf8mb4
+        - --collation-server=utf8mb4_unicode_ci
+    volumes:
+        - ./db/conf.d:/etc/mysql/conf.d
+        - ./db/data:/var/lib/mysql      

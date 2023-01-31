@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express, { Express } from 'express';
 import config from './config';
-// import './data-source/connectDB';
+import './data-source';
 
 const app: Express = express();
 

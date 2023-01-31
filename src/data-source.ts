@@ -9,9 +9,10 @@ const connectDB = new DataSource({
   username: config.db_username,
   password: config.db_password,
   database: config.db_database,
-  entities: [],
+  entities: [__dirname + '/entities/*.{ts,js}'],
   synchronize: false,
   logging: false,
+  migrations: [__dirname + '/migrations/*.{ts,js}'],
 });
 
 connectDB

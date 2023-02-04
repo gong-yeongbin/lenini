@@ -9,7 +9,6 @@
     "build": "rimraf ./dist && tsc -p .",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/app.ts",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "typeorm:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/data-source.ts migration:run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

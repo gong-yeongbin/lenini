@@ -11,7 +11,8 @@ export class createProduct1675508053800 implements MigrationInterface {
         wholesale_price int not null,
         consumer_price int not null,
         upload_date datetime,
-        primary key(id)
+        primary key(id),
+        unique key(name)
     )
     `);
   }

@@ -10,7 +10,8 @@ export class createConsumer1675506940002 implements MigrationInterface {
         order_date datetime not null,
         delivery_date datetime,
         delivery_price int,
-        primary key(id)
+        primary key(id),
+        unique key(name)
     )`);
   }
 

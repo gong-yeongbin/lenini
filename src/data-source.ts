@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import config from './config';
 
-const connectDB = new DataSource({
+const AppDataSource = new DataSource({
   type: 'mysql',
   host: config.db_host,
   port: config.db_port,
@@ -15,8 +15,7 @@ const connectDB = new DataSource({
   migrations: [__dirname + '/migrations/*.{ts,js}'],
 });
 
-connectDB
-  .initialize()
+AppDataSource.initialize()
   .then(() => {
     console.log(
       `
@@ -28,4 +27,4 @@ connectDB
   })
   .catch((error) => console.log(error));
 
-export default connectDB;
+export default AppDataSource;

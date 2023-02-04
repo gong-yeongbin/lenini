@@ -6,10 +6,10 @@ import {
 } from 'typeorm';
 
 export abstract class Base {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn({ type: 'int' })
+  id: number;
 
-  @Column({ type: 'varchar', name: 'name' })
+  @Column({ type: 'varchar', name: 'name', length: 50, nullable: false })
   name: string;
 
   @CreateDateColumn({

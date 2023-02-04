@@ -1,9 +1,12 @@
 import dotenv from 'dotenv';
 
 const envFound = dotenv.config({
-  path: `.env.${process.env.NODE_ENV as string}`,
+  path:
+    process.env.NODE_ENV == undefined
+      ? `.env.local`
+      : `.env.${process.env.NODE_ENV}`,
 });
-
+console.log(envFound);
 if (envFound.error) throw new Error("⚠️  Couldn't find .env file  ⚠️");
 
 export default {
